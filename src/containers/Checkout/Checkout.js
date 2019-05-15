@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary';
 
 class Checkout extends Component {
+
     state = {
         ingredients: {
             salad: 1,
@@ -13,13 +14,12 @@ class Checkout extends Component {
     }
 
     componentDidMount() {
-        // console.log(this.props.location.search);
         const query = new URLSearchParams(this.props.location.search);
         const ingredients = {};
         for (let param of query.entries()) {
             ingredients[param[0]] = +param[1];
         }
-        this.setState({ingredients: ingredients});
+        this.setState({ ingredients: ingredients });
     }
 
     checkoutCancelledHandler = () => {
@@ -33,10 +33,10 @@ class Checkout extends Component {
     render() {
         return (
             <div>
-                <CheckoutSummary 
+                <CheckoutSummary
                     ingredients={this.state.ingredients}
                     checkoutCancelled={this.checkoutCancelledHandler}
-                    checkoutContinued={this.checkoutContinuedHandler}/>
+                    checkoutContinued={this.checkoutContinuedHandler} />
             </div>
         );
     }
