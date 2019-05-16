@@ -87,6 +87,7 @@ class ContactData extends Component {
                     placeholder: 'Street'
                 },
                 value: '',
+                validation: {},
                 valid: true
             }
         },
