@@ -9,11 +9,7 @@ import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import axios from '../../axios-orders';
-<<<<<<< HEAD
-import * as actionTypes from '../../store/actions';
-=======
 import * as burgerBuilderActions from '../../store/actions/index';
->>>>>>> dev
 
 class BurgerBuilder extends Component {
 
@@ -41,11 +37,7 @@ class BurgerBuilder extends Component {
             } )
             .reduce( ( sum, el ) => {
                 return sum + el;
-<<<<<<< HEAD
-            }, 0);
-=======
             }, 0 );
->>>>>>> dev
         return sum > 0;
     }
 
