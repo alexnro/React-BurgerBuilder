@@ -7,7 +7,6 @@ import classes from './Auth.css';
 import * as actions from '../../store/actions/index';
 
 class Auth extends Component {
-
     state = {
         controls: {
             email: {
@@ -44,7 +43,6 @@ class Auth extends Component {
 
     checkValidity(value, rules) {
         let isValid = true;
-
         if (!rules) {
             return true;
         }
@@ -54,11 +52,11 @@ class Auth extends Component {
         }
 
         if (rules.minLength) {
-            isValid = value.length >= rules.minLength && isValid;
+            isValid = value.length >= rules.minLength && isValid
         }
 
         if (rules.maxLength) {
-            isValid = value.length <= rules.maxLength && isValid;
+            isValid = value.length <= rules.maxLength && isValid
         }
 
         if (rules.isEmail) {
@@ -84,7 +82,7 @@ class Auth extends Component {
                 touched: true
             }
         };
-        this.setState({controls: updatedControls});
+        this.setState({ controls: updatedControls });
     }
 
     submitHandler = (event) => {
@@ -94,12 +92,11 @@ class Auth extends Component {
 
     switchAuthModeHandler = () => {
         this.setState(prevState => {
-            return {isSignup: !prevState.isSignup}
-        })
+            return { isSignup: !prevState.isSignup };
+        });
     }
 
     render() {
-
         const formElementsArray = [];
         for (let key in this.state.controls) {
             formElementsArray.push({
@@ -117,8 +114,7 @@ class Auth extends Component {
                 invalid={!formElement.config.valid}
                 shouldValidate={formElement.config.validation}
                 touched={formElement.config.touched}
-                changed={(event) => this.inputChangedHandler(event, formElement.id)}
-            />
+                changed={(event) => this.inputChangedHandler(event, formElement.id)} />
         ));
 
         return (
@@ -127,10 +123,9 @@ class Auth extends Component {
                     {form}
                     <Button btnType="Success">SUBMIT</Button>
                 </form>
-                <Button 
+                <Button
                     clicked={this.switchAuthModeHandler}
-                    btnType="Danger">SWITCH TO {this.state.isSignup ? 'SIGNIN' : 'SIGNUP'}
-                </Button>
+                    btnType="Danger">SWITCH TO {this.state.isSignup ? 'SIGNIN' : 'SIGNUP'}</Button>
             </div>
         );
     }
