@@ -1,5 +1,5 @@
-export { 
-    addIngredient, 
+export {
+    addIngredient,
     removeIngredient,
     initIngredients,
     setIngredients,
@@ -8,7 +8,13 @@ export {
 export {
     purchaseBurger,
     purchaseInit,
-    fetchOrders
+    fetchOrders,
+    purchaseBurgerStart,
+    purchaseBurgerFail,
+    purchaseBurgerSuccess,
+    fetchOrdersSuccess,
+    fetchOrdersStart,
+    fetchOrdersFail
 } from './order';
 export {
     auth,
@@ -18,6 +24,6 @@ export {
     logoutSucceed,
     authStart,
     authSuccess,
-    checkAuthTimeout,
-    authFail
+    authFail,
+    checkAuthTimeout
 } from './auth';

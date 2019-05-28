@@ -1,5 +1,3 @@
-import React from 'react';
-
 import reducer from './auth';
 import * as actionTypes from '../actions/actionTypes';
 
@@ -14,23 +12,23 @@ describe('auth reducer', () => {
         });
     });
 
-    it('should store the token upon logic', () => {
+    it('should store the token upon login', () => {
         expect(reducer({
             token: null,
             userId: null,
             error: null,
             loading: false,
             authRedirectPath: '/'
-        }, {
+        }, { 
             type: actionTypes.AUTH_SUCCESS,
             idToken: 'some-token',
             userId: 'some-user-id'
-        })).toEqual({
+         })).toEqual({
             token: 'some-token',
             userId: 'some-user-id',
             error: null,
             loading: false,
             authRedirectPath: '/'
         });
-    });
+    })
 });
