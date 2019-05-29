@@ -14,7 +14,7 @@ const Layout = props => {
     };
 
     const sideDrawerToggleHandler = () => {
-        setSideDrawerIsVisible(!setSideDrawerIsVisible);
+        setSideDrawerIsVisible(!sideDrawerIsVisible);
     };
 
 
